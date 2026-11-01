@@ -1,0 +1,446 @@
+[
+  {
+    "title": "Fininho",
+    "items": [
+      {
+        "code": "1001",
+        "title": "Pão, Carne e Queijo",
+        "desc": "Burger Fininho de 90g, American Cheese Queijudo, num Pão Artesanal.",
+        "detail": "Burger Fininho de 90g (Fake Smash), American Cheese Queijudo, num Pão de Gergelim Artesanal bem fofinho.",
+        "group": "Fininho"
+      },
+      {
+        "code": "1002",
+        "title": "Fininho",
+        "desc": "Burger Fininho de 90g, American Cheese Queijudo, Maionese do Netão, num Pão Artesanal.",
+        "detail": "Burger Fininho de 90g (Fake Smash), American Cheese Queijudo, Maionese do Netão, num Pão de Gergelim Artesanal bem fofinho.",
+        "group": "Fininho"
+      },
+      {
+        "code": "2019",
+        "title": "Pop Burger",
+        "desc": "Burger Fininho de 90g, American Cheese, Molho Especial, Cebola Roxa, Picles de Pepino, num Pão Artesanal.",
+        "detail": "Burger Fininho de 90g (Fake Smash), American Cheese Queijudo, Molho Especial do Netão ou não, Cebola Roxa, Picles de Pepino num Pão de Gergelim Artesanal bem fofinho.",
+        "group": "Fininho"
+      },
+      {
+        "code": "1014",
+        "title": "X-Saladinha",
+        "desc": "Burger Fininho de 90g, American Cheese, Maionese do Netão, Cebola Roxa, Alface Americana e Tomate, num Pão Artesanal.",
+        "detail": "Burger Fininho de 90g (Fake Smash), American Cheese Queijudo, Maionese do Netão de comer rezando, Cebola Roxa, Alface e Tomates Fresquinhos, num Pão de Gergelim Artesanal bem fofinho.",
+        "group": "Fininho"
+      },
+      {
+        "code": "1003",
+        "title": "Fininho Bacon",
+        "desc": "Burger Fininho de 90g, American Cheese Queijudo, Fatias de Bacon, Maionese do Netão, num Pão Artesanal.",
+        "detail": "Burger Fininho de 90g (Fake Smash), American Cheese Queijudo, Fatias de Bacon Crocantes, Maionese do Netão, num Pão de Gergelim Artesanal bem fofinho.",
+        "group": "Fininho"
+      },
+      {
+        "code": "1005",
+        "title": "Big Neto",
+        "desc": "2 Burgers Fininhos de 90g, American Cheese, Molho Especial, Alface, Cebola Roxa, Picles de Pepino, num Pão Artesanal.",
+        "detail": "2 Burgers Fininhos de 90g (Fake Smash), American Cheese Queijudo, Molho Especial do Netão ou não, Alface Americana Fresquinha, Cebola Roxa, Picles de Pepino, num Pão de Gergelim Artesanal bem fofinho.",
+        "group": "Fininho"
+      }
+    ]
+  },
+  {
+    "title": "Grelha",
+    "items": [
+      {
+        "code": "2002",
+        "title": "X-Netão",
+        "desc": "Burgão de 160g, Cheddar Queijudo, Maionese Verde, num Pão Artesanal.",
+        "detail": "Burgão de 160g, Cheddar Queijudo, Aquela Maionese Verde mais zika das galáxias, num Pão de Brioche Artesanal bem fofinho.",
+        "group": "Grelha"
+      },
+      {
+        "code": "2001",
+        "title": "Duas Metades",
+        "desc": "Burgão de 160g, Cheddar Queijudo, num Pão Artesanal cortado ao meio e tostado na grelha.",
+        "detail": "Burgão de 160g, Cheddar Queijudo, num Pão de Brioche Artesanal bem fofinho, cortado ao meio e tostado na grelha.",
+        "group": "Grelha"
+      },
+      {
+        "code": "2008",
+        "title": "X-Salada",
+        "desc": "Burgão de 160g, Cheddar Queijudo, Maionese do Netão, Cebola roxa, Alface e Tomate, num Pão Artesanal.",
+        "detail": "Burgão de 160g, Cheddar Queijudo, Maionese do Netão de comer rezando, Cebola roxa, Alface e Tomate Fresquinhos, num Pão de Brioche Artesanal bem fofinho.",
+        "group": "Grelha"
+      },
+      {
+        "code": "2043",
+        "title": "Barbecue Burger",
+        "desc": "Burgão de 160g, Cheddar Queijudo, Maionese do Netão, Onion Rings, Fatias de Bacon e Molho Barbecue num Pão Artesanal.",
+        "detail": "Burgão de 160g, Cheddar Queijudo, Maionese do Netão de comer rezando, Fatias de Bacon Crocantes, Onion Rings e Molho Barbecue, num Pão de Brioche Artesanal bem fofinho.",
+        "group": "Grelha"
+      },
+      {
+        "code": "2028",
+        "title": "Catupiry Burger",
+        "desc": "Burgão de 160g, Maionese do Netão, Catupiry Original Cremosão com Farofa de Bacon, num Pão Artesanal.",
+        "detail": "Burgão de 160g, Maionese do Netão de comer rezando e ainda vai Catupiry Original Cremosão lambuzando tudo com Farofa de Bacon sem farinha, num Pão de Brioche Artesanal bem fofinho.",
+        "group": "Grelha"
+      },
+      {
+        "code": "2003",
+        "title": "Preferido",
+        "desc": "Burgão de 160g, Cheddar Queijudo, Maionese Verde, Fatias de Bacon, Cebola Caramelizada, num Pão Artesanal.",
+        "detail": "O Preferido do Netão e dos fãs da B.B.B! Burgão de 160g, Cheddar Queijudo, Aquela Maionese Verde mais zika das galáxias, Fatias de Bacon Crocantes e sequinhas, Cebola Caramelizada nem doce nem salgada, num Pão de Brioche Artesanal bem fofinho.",
+        "group": "Grelha"
+      },
+      {
+        "code": "2005",
+        "title": "Burger Cremoso",
+        "desc": "Burgão de 160g, Cheddar Queijudo, Maionese do Netão, Cheddar Cremosão com Farofa de Bacon, num Pão Artesanal.",
+        "detail": "Burgão de 160g, Cheddar Queijudo, Maionese do Netão de comer rezando e ainda vai Cheddar Cremosão lambuzando tudo com Farofa de Bacon sem farinha, num Pão de Brioche Artesanal bem fofinho.",
+        "group": "Grelha"
+      },
+      {
+        "code": "2040",
+        "title": "Duplo X-Netão",
+        "desc": "2 Burgões de 160g, Cheddar Queijudo, Maionese Verde, num Pão Artesanal.",
+        "detail": "Burgões de 160g, Cheddar Queijudo, Aquela Maionese Verde mais zika das galáxias, num Pão de Brioche Artesanal bem fofinho.",
+        "group": "Grelha"
+      },
+      {
+        "code": "2007",
+        "title": "Mega Preferido",
+        "desc": "2 Burgões de 160g, Cheddar Queijudo, Maionese Verde, Fatias de Bacon, Cebola Caramelizada, num Pão Artesanal.",
+        "detail": "Esse é pros lariquentos de plantão: O Preferido do Netão e dos fãs da B.B.B, com tudo em dobro! 2 Burgões de 160g, Cheddar Queijudo, Aquela Maionese Verde mais zika das galáxias, Fatias de Bacon Crocantes e sequinhas, Cebola Caramelizada nem doce nem salgada, num Pão de Brioche Artesanal bem fofinho.",
+        "group": "Grelha"
+      },
+      {
+        "code": "2039",
+        "title": "Bday Burger",
+        "desc": "Burgão de 160g, Cheddar Queijudo, Maionese, Cebola Caramelizada, Molho Barbecue e Farofa de Bacon, num Pão Artesanal.",
+        "detail": "Burgão de 160g, Cheddar Queijudo, Maionese do Netão de comer rezando, Cebola Caramelizada nem doce nem salgada, Molho Barbecue levemente apimentado, Farofa de Bacon sem farinha, num Pão de Brioche Artesanal bem fofinho.",
+        "group": "Grelha"
+      }
+    ]
+  },
+  {
+    "title": "Wagyu",
+    "items": [
+      {
+        "code": "2034",
+        "title": "Wagyu Burger",
+        "desc": "Burgão Wagyu 200g, Cheddar, num Pão de Brioche, cortado ao meio e tostado na grelha. Acompanha Maionese de Wasabi.",
+        "detail": "Burger de Wagyu 200g — uma das carnes mais nobres do mundo, conhecida pelo alto nível de marmoreio, que garante textura macia, suculência intensa e simplesmente derrete na boca. Acompanha cheddar e maionese de wasabi, trazendo equilíbrio perfeito, no pão brioche tostado.\nDelicioso e premium — a escolha ideal para sentir o verdadeiro sabor do Wagyu. (+ 10 MINUTOS)",
+        "group": "Wagyu"
+      },
+      {
+        "code": "2035",
+        "title": "Wagyu Salad",
+        "desc": "Burgão Wagyu 200g, Cheddar, Maionese do Netão, Cebola Roxa, Alface Americana e Tomate, num Pão Artesanal.",
+        "detail": "Burger de Wagyu 200g — uma das carnes mais nobres do mundo, conhecida pelo alto nível de marmoreio, que garante textura macia, suculência intensa e simplesmente derrete na boca. Acompanha cheddar, alface americana, tomate, cebola roxa e maionese do Netão, no pão artesanal.\nEquilíbrio perfeito, com uma experiência premium mais leve. (+ 10 MINUTOS) \n\n*Imagem meramente ilustrativa.",
+        "group": "Wagyu"
+      },
+      {
+        "code": "2036",
+        "title": "Wagyu Bacon",
+        "desc": "Burgão Wagyu 200g, Cheddar, Maionese Verde, Tomate, Fatias de Bacon, num Pão Artesanal.",
+        "detail": "Burgão Wagyu 200g no Ponto do Netão, Cheddar Queijudo, Aquela Maionese Verde mais zika das galáxias, Tomates Fresquinhos, Fatias de Bacon Crocantes e sequinhas, num Pão de Brioche Artesanal bem fofinho. (+ 10 MINUTOS)\n\n*Imagem meramente ilustrativa.",
+        "group": "Wagyu"
+      },
+      {
+        "code": "2037",
+        "title": "Kobe Burger",
+        "desc": "Burgão Wagyu 200g, Cheddar, Maionese de Wasabi, Fatias de Bacon, Cebola Caramelizada, num Pão Artesanal.",
+        "detail": "Burger de Wagyu 200g — uma das carnes mais nobres do mundo, conhecida pelo alto nível de marmoreio, que garante textura macia, suculência intensa e simplesmente derrete na boca. Acompanha cheddar, bacon crocante, cebola caramelizada e um toque especial de maionese de wasabi, trazendo equilíbrio perfeito. Tudo isso no pão artesanal tostado.\nUm burger premium, feito pra quem quer sair do comum. (+ 10 MINUTOS)\n\n*Imagem meramente ilustrativa.",
+        "group": "Wagyu"
+      }
+    ]
+  },
+  {
+    "title": "Burger de Toscana",
+    "items": [
+      {
+        "code": "1022",
+        "title": "Chori Burger",
+        "desc": "Burger de Toscana Aurora de 150g, American Cheese, Chimichurri, Maionese do Netão, num Pão Artesanal.",
+        "detail": "Burger de Toscana Aurora de 150g, American Cheese Queijudo, Maionese do Netão, Chimichurri, num Pão de Gergelim Artesanal.",
+        "group": "Burger de Toscana"
+      },
+      {
+        "code": "1024",
+        "title": "Toscana Salad",
+        "desc": "Burger de Toscana Aurora de 150g, American Cheese, Maionese, Cebola Roxa, Alface Americana e Tomate, num Pão Artesanal.",
+        "detail": "Burger de Toscana Aurora de 150g, American Cheese Queijudo, Maionese do Netão de comer rezando, Cebola Roxa, Alface e Tomates Fresquinhos, num Pão de Gergelim Artesanal bem fofinho.",
+        "group": "Burger de Toscana"
+      }
+    ]
+  },
+  {
+    "title": "Chicken Sandwich",
+    "items": [
+      {
+        "code": "1015",
+        "title": "Chicken Salad",
+        "desc": "Burger de Frango Empanado 100g, Cheddar Queijudo, Alface, Maionese do Netão, num Pão Artesanal.",
+        "detail": "Burger de Frango Empanado 100g, Cheddar Queijudo, Alface Fresquinha, Maionese do Netão de comer rezando, num Pão de Gergelim Artesanal bem fofinho.",
+        "group": "Chicken Sandwich"
+      }
+    ]
+  },
+  {
+    "title": "Vegetariano",
+    "items": [
+      {
+        "code": "2024",
+        "title": "Vegetariano Salad",
+        "desc": "Burger Vegetariano, Cheddar Queijudo, Maionese do Netão, Cebola roxa, Alface e Tomates Fresquinhos, num Pão Artesanal.",
+        "detail": "Burger Vegetariano, Cheddar Queijudo, Maionese do Netão de comer rezando, Cebola roxa, Alface e Tomates Fresquinhos, num Pão de Brioche Artesanal bem fofinho.\n\n*Hambúrguer Vegetariano a base de Soja, 100% vegetal.",
+        "group": "Vegetariano"
+      }
+    ]
+  },
+  {
+    "title": "Acompanhamentos",
+    "items": [
+      {
+        "code": "3005",
+        "title": "Batata Palito",
+        "desc": "Batatas palito douradinhas, sequinhas por fora, macias por dentro e fritas na medida certa.",
+        "detail": "Batatas palito douradinhas, sequinhas por fora, macias por dentro e fritas na medida certa. O acompanhamento perfeito para qualquer burger!\nAproximadamente 100g",
+        "group": "Acompanhamentos"
+      },
+      {
+        "code": "3006",
+        "title": "Batata Palito Grande",
+        "desc": "Potão de batatinhas palito super sequinhas, crocantes por fora e macias por dentro.",
+        "detail": "Potão de batatinhas palito super sequinhas, crocantes por fora e macias por dentro.",
+        "group": "Acompanhamentos"
+      },
+      {
+        "code": "3007",
+        "title": "Batata Palito com Cheddar e Bacon",
+        "desc": "Porção de batatinhas palito super sequinhas, crocantes por fora e macias por dentro. Com Cheddar Cremoso e bacon farofa.",
+        "detail": "Porção de batatinhas palito super sequinhas, crocantes por fora e macias por dentro. Turbinadas com Cheddar Cremoso e farofa de bacon.",
+        "group": "Acompanhamentos"
+      },
+      {
+        "code": "3009",
+        "title": "Batata Palito Brava",
+        "desc": "Batata Palito Grande turbinada com temperinho especial do Netão",
+        "detail": "Batata Palito Grande turbinada com temperinho especial do Netão",
+        "group": "Acompanhamentos"
+      },
+      {
+        "code": "3017",
+        "title": "Onion Rings",
+        "desc": "Anéis de cebola crocantes e fininhos com um tempero especial do Netão. \n\n*10 unidades por porção.",
+        "detail": "Anéis de cebola crocantes e fininhos com um tempero especial do Netão. \n\n*10 unidades por porção.",
+        "group": "Acompanhamentos"
+      },
+      {
+        "code": "3003",
+        "title": "Crock Nuggets",
+        "desc": "Crock Nuggets, acompanha molho B.B.Q. Apimentado by Netão.",
+        "detail": "Crock Nuggets, acompanha molho B.B.Q. Apimentado by Netão.\n\n*9 unidades por porção.",
+        "group": "Acompanhamentos"
+      },
+      {
+        "code": "3014",
+        "title": "Coxinha Frango com Catupiry",
+        "desc": "Coxinha RECHEADA com Frango e Catupiry Original. Acompanha Maionese do Netão!  *10 Unidades por porção",
+        "detail": "Coxinha RECHEADA com Frango e Catupiry Original. Acompanha Maionese do Netão! *10 Unidades por porção",
+        "group": "Acompanhamentos"
+      },
+      {
+        "code": "3011",
+        "title": "Queijo Gouda Empanado",
+        "desc": "Queijo Gouda Empanado com casquinha crocante por fora e cremosão por dentro, acompanha DIP de Goiabada by Netão.\n\n*8 Un",
+        "detail": "Queijo Gouda Empanado com casquinha crocante por fora e cremosão por dentro, acompanha DIP de Goiabada by Netão.\n\n*8 Unidades por porção",
+        "group": "Acompanhamentos"
+      },
+      {
+        "code": "3016",
+        "title": "Drumet Crocante da Asa",
+        "desc": "Drumet Crocante da Asa empanados, suculentos e turbinados com temperinho especial do Netão.",
+        "detail": "Drumet Crocante da Asa empanados, suculentos e turbinados com temperinho especial do Netão. Acompanha molho B.B.Q. Apimentado by Netão.\n\n*5 unidades por porção.",
+        "group": "Acompanhamentos"
+      }
+    ]
+  },
+  {
+    "title": "Molhos",
+    "items": [
+      {
+        "code": "4001",
+        "title": "Baldinho Cheddar e Bacon",
+        "desc": "Baldinho de Cheddar Cremosão com farofa de Bacon para lambuzar tudo.",
+        "detail": "Baldinho de Cheddar Cremosão com farofa de Bacon para lambuzar tudo.",
+        "group": "Molhos"
+      },
+      {
+        "code": "4015",
+        "title": "Baldinho Catupiry e Bacon",
+        "desc": "Baldinho de Catupiry Original Cremosão com farofa de Bacon para lambuzar tudo.",
+        "detail": "Baldinho de Catupiry Original Cremosão com farofa de Bacon para lambuzar tudo.",
+        "group": "Molhos"
+      },
+      {
+        "code": "4002",
+        "title": "Maionese Verde",
+        "desc": "Àquela Maionese Verde mais zika das galáxias!",
+        "detail": "Àquela Maionese Verde mais zika das galáxias!",
+        "group": "Molhos"
+      },
+      {
+        "code": "4003",
+        "title": "Maionese do Netão",
+        "desc": "Maionese do Netão de comer rezando!",
+        "detail": "Maionese do Netão de comer rezando!",
+        "group": "Molhos"
+      },
+      {
+        "code": "4004",
+        "title": "Molho Especial",
+        "desc": "Molho Especial do Netão ou não.",
+        "detail": "Molho Especial do Netão ou não.",
+        "group": "Molhos"
+      },
+      {
+        "code": "4005",
+        "title": "Molho Barbecue By Netão",
+        "desc": "Molho B.B.Q. Apimentado by Netão.",
+        "detail": "Molho B.B.Q. Apimentado by Netão.",
+        "group": "Molhos"
+      },
+      {
+        "code": "4006",
+        "title": "DIP de Goiabada by Netão",
+        "desc": "DIP de Goiabada com pimenta by Netão.",
+        "detail": "DIP de Goiabada com pimenta by Netão.",
+        "group": "Molhos"
+      }
+    ]
+  },
+  {
+    "title": "Sobremesas",
+    "items": [
+      {
+        "code": "5410",
+        "title": "Brownie do NETÃO",
+        "desc": "Brownie chocolatudo com sorvete de baunilha cremosão e calda de chocolate bem treta.",
+        "detail": "Brownie chocolatudo com sorvete de baunilha cremosão e calda de chocolate bem treta. Observação: Pode conter nozes.",
+        "group": "Sobremesas"
+      },
+      {
+        "code": "5519",
+        "title": "Cookie de Nutella com Sorvete",
+        "desc": "Cookie Crocante recheado com Nutella e um sorvete cremosão pra acompanhar.",
+        "detail": "Cookie Crocante recheado com Nutella e um sorvete cremosão pra acompanhar.",
+        "group": "Sobremesas"
+      },
+      {
+        "code": "5216",
+        "title": "Milkshake Proteico de Chocolate 500ml",
+        "desc": "São 41g de proteína!! Sorvete de baunilha cremosão batido com Whey Protein de Chocolate Belga Soldiers Nutrition!!!\n",
+        "detail": "São 41g de proteína!! Sorvete de baunilha cremosão batido com Whey Protein de Chocolate Belga Soldiers Nutrition!!!",
+        "group": "Milkshakes Proteicos by Soldiers Nutrition"
+      },
+      {
+        "code": "5217",
+        "title": "Milkshake Proteico de Morango 500ml",
+        "desc": "São 41g de proteína!! Sorvete de baunilha cremosão batido com Whey Protein de Morango Soldiers Nutrition!!!",
+        "detail": "São 41g de proteína!! Sorvete de baunilha cremosão batido com Whey Protein de Morango Soldiers Nutrition!!!",
+        "group": "Milkshakes Proteicos by Soldiers Nutrition"
+      },
+      {
+        "code": "5218",
+        "title": "Milkshake Proteico de Baunilha 500ml",
+        "desc": "São 41g de proteína!! Sorvete de baunilha cremosão batido com Whey Protein de Baunilha Soldiers Nutrition!!!",
+        "detail": "São 41g de proteína!! Sorvete de baunilha cremosão batido com Whey Protein de Baunilha Soldiers Nutrition!!!",
+        "group": "Milkshakes Proteicos by Soldiers Nutrition"
+      },
+      {
+        "code": "5001",
+        "title": "Sundae Morango",
+        "desc": "Sorvete de baunilha cremosão, calda de morango bem treta,com crocante de amendoim e caramelo salgado e tubinho de waffer",
+        "detail": "Sorvete de baunilha cremosão, calda de morango bem treta, com crocante de amendoim e caramelo salgado e tubinho de waffer",
+        "group": "Sundaes"
+      },
+      {
+        "code": "5002",
+        "title": "Sundae Caramelo",
+        "desc": "Sorvete de baunilha cremosão,calda de caramelo bem treta,com crocante de amendoim e caramelo salgado e tubinho de waffer",
+        "detail": "Sorvete de baunilha cremosão, calda de caramelo bem treta, com crocante de amendoim e caramelo salgado e tubinho de waffer",
+        "group": "Sundaes"
+      },
+      {
+        "code": "5003",
+        "title": "Sundae Chocolate",
+        "desc": "Sorvete de baunilha cremosão,calda de chocolate bem treta, com crocante de amendoim,caramelo salgado e tubinho de waffer",
+        "detail": "Sorvete de baunilha cremosão, calda de chocolate bem treta, com crocante de amendoim e caramelo salgado e tubinho de waffer",
+        "group": "Sundaes"
+      },
+      {
+        "code": "5205",
+        "title": "Milkshake Paçoca 500ml",
+        "desc": "Sorvete de baunilha cremosão batido com calda de caramelo bem treta e bastante paçoca !!!",
+        "detail": "Sorvete de baunilha cremosão batido com calda de caramelo bem treta e bastante paçoca !!!",
+        "group": "Milkshakes"
+      },
+      {
+        "code": "5201",
+        "title": "Milkshake Morango 500ml",
+        "desc": "Sorvete de baunilha cremosão batido com calda de morango bem treta",
+        "detail": "Sorvete de baunilha cremosão batido com calda de morango bem treta",
+        "group": "Milkshakes"
+      },
+      {
+        "code": "5202",
+        "title": "Milkshake Caramelo 500ml",
+        "desc": "Sorvete de baunilha cremosão batido com calda de caramelo bem treta",
+        "detail": "Sorvete de baunilha cremosão batido com calda de caramelo bem treta",
+        "group": "Milkshakes"
+      },
+      {
+        "code": "5203",
+        "title": "Milkshake Chocolate 500ml",
+        "desc": "Sorvete misto cremosão batido com calda de chocolate bem treta",
+        "detail": "Sorvete misto cremosão batido com calda de chocolate bem treta",
+        "group": "Milkshakes"
+      },
+      {
+        "code": "5204",
+        "title": "Milkshake Ovomaltine 500ml",
+        "desc": "Sorvete misto cremosão batido com calda de chocolate bem treta e bastante Ovomaltine !!!",
+        "detail": "Sorvete misto cremosão batido com calda de chocolate bem treta e bastante Ovomaltine !!!",
+        "group": "Milkshakes"
+      },
+      {
+        "code": "5208",
+        "title": "Milkshake Brigadeiro 500ml",
+        "desc": "Sorvete de chocolate cremosão batido com Leite Condensado Moça e bastante granulado de chocolate!!!",
+        "detail": "Sorvete de chocolate cremosão batido com Leite Condensado Moça e bastante granulado de chocolate!!!",
+        "group": "Milkshakes"
+      },
+      {
+        "code": "5209",
+        "title": "Milkshake Caramelo Salgado e Bacon 500ml",
+        "desc": "Sorvete de baunilha cremosão batido com Caramelo Salgado Moça e bastante farofa de bacon!!",
+        "detail": "Sorvete de baunilha cremosão batido com Caramelo Salgado Moça e bastante farofa de bacon!!",
+        "group": "Milkshakes"
+      },
+      {
+        "code": "5211",
+        "title": "Milkshake Mousse de Limão 500ml",
+        "desc": "Sorvete de baunilha cremosão batido com Leite Condensado Moça e suco de limão!!!",
+        "detail": "Sorvete de baunilha cremosão batido com Leite Condensado Moça e suco de limão!!!",
+        "group": "Milkshakes"
+      },
+      {
+        "code": "5212",
+        "title": "Milkshake Cappuccino 500ml",
+        "desc": "Sorvete de baunilha cremosão batido com Caramelo Salgado Moça e Nescafé pra te deixar ligadão!!",
+        "detail": "Sorvete de baunilha cremosão batido com Caramelo Salgado Moça e Nescafé pra te deixar ligadão!!",
+        "group": "Milkshakes"
+      }
+    ]
+  }
+]
