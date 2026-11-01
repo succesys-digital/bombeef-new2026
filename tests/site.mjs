@@ -40,12 +40,16 @@ console.log('redirect /nossas-unidades/ ->', seen.get('/nossas-unidades/'), ' 40
 if (problems.length) { console.log(problems.slice(0, 40).join('\n')); process.exit(1); }
 console.log('OK');
 
-// Lead endpoint without RD_PUBLIC_TOKEN must refuse, never fake success.
 const fd = new FormData();
-for (const [k, v] of Object.entries({ name: 'Teste QA', email: 'qa@exemplo.com', phone: '11912345678', city: 'Santos', state: 'SP', investment: 'Tenho mais de R$ 950 mil', consent: 'on', started: '1000' })) fd.set(k, v);
-const ok = await fetch(`${base}/api/lead`, { method: 'POST', body: fd, headers: { Accept: 'application/json' } });
-console.log('POST /api/lead valid, no token:', ok.status, await ok.text());
-fd.set('email', 'x');
+for (const [k, v] of Object.entries({ name: 'Teste QA', email: 'x', phone: '11912345678', city: 'Santos', state: 'SP', investment: 'Tenho mais de R$ 950 mil', consent: 'on', started: '1000' })) fd.set(k, v);
 const bad = await fetch(`${base}/api/lead`, { method: 'POST', body: fd, headers: { Accept: 'application/json' } });
 console.log('POST /api/lead invalid:', bad.status, (await bad.text()).slice(0, 90));
-if (ok.status !== 503 || bad.status !== 422) process.exit(1);
+if (bad.status !== 422) process.exit(1);
+
+// A valid lead reaches the CRM when RD_PUBLIC_TOKEN is set, so it only runs locally, where the token is absent.
+if (new URL(base).hostname === 'localhost') {
+  fd.set('email', 'qa@exemplo.com');
+  const ok = await fetch(`${base}/api/lead`, { method: 'POST', body: fd, headers: { Accept: 'application/json' } });
+  console.log('POST /api/lead valid, no token:', ok.status, await ok.text());
+  if (ok.status !== 503) process.exit(1);
+}
