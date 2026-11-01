@@ -1,0 +1,19 @@
+# Old WordPress URLs that still get traffic. Unit pages and /quero-ser-franqueado/ keep their paths.
+/nossas-unidades /unidades/ 301
+/nossas-unidades/ /unidades/ 301
+/encontre-a-bbb-mais-proxima /unidades/ 301
+/encontre-a-bbb-mais-proxima/ /unidades/ 301
+/quero-ser-franqueado-2 /quero-ser-franqueado/ 301
+/quero-ser-franqueado-2/ /quero-ser-franqueado/ 301
+/quero-ser-franqueado/finalizado /quero-ser-franqueado/sucesso/ 301
+/quero-ser-franqueado/finalizado/ /quero-ser-franqueado/sucesso/ 301
+/contato /quero-ser-franqueado/ 302
+/contato/ /quero-ser-franqueado/ 302
+/politica-de-privacidade /politica-de-privacidade/ 301
+# WordPress pages that the live store list does not link. Status to be confirmed: see docs/pendencias.md.
+/unidades/ribeirao-preto /unidades/ 302
+/unidades/ribeirao-preto/ /unidades/ 302
+/unidades/barra-da-tijuca /unidades/ 302
+/unidades/barra-da-tijuca/ /unidades/ 302
+/unidades/sao-jose-dos-campos /unidades/ 302
+/unidades/sao-jose-dos-campos/ /unidades/ 302
