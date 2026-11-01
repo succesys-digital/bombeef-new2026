@@ -48,8 +48,16 @@ async function init(story: HTMLElement) {
     ScrollTrigger.addEventListener('refresh', () => scene.refresh());
     // A single turn on arrival shows the burger can be handled.
     gsap.fromTo(state, { yaw: state.yaw - 0.75, pitch: -0.25 }, { yaw: state.yaw, pitch: 0, duration: 1.5, ease: 'power3.out', onUpdate: render });
+    if (matchMedia('(hover: none)').matches) swayLight(scene);
   }).catch((err) => console.warn('burger scene disabled', err));
   ('requestIdleCallback' in window ? requestIdleCallback : setTimeout)(start as any, { timeout: 900 } as any);
+}
+
+// Touch screens have no hover, so the light that follows the mouse on desktop drifts on its own.
+// Runs only on the opening screen, to spare the battery once the visitor scrolls.
+function swayLight(scene: NonNullable<Awaited<ReturnType<typeof createBurger>>>) {
+  const sway = gsap.fromTo(scene.input, { hoverYaw: -0.16, hoverPitch: 0.12 }, { hoverYaw: 0.16, hoverPitch: -0.12, duration: 3.5, ease: 'sine.inOut', yoyo: true, repeat: -1, onUpdate: scene.invalidate });
+  ScrollTrigger.create({ start: 0, end: () => innerHeight * 0.4, onToggle: (self) => { if (self.isActive) sway.play(); else sway.pause(); } });
 }
 
 function buildTimeline(story: HTMLElement, stage: HTMLElement, state: BurgerState, render: () => void) {
@@ -92,7 +100,7 @@ function buildTimeline(story: HTMLElement, stage: HTMLElement, state: BurgerStat
   });
 
   const end = 1.2 + steps.length * 1.5;
-  tl.to(state, { explode: 0, scale: () => (wide() ? 1.05 : 0.95), x: () => (wide() ? innerWidth * 0.1 : 0), y: () => (wide() ? -innerHeight * 0.1 : -innerHeight * 0.17), yaw: 0, duration: 1, ease: 'power2.inOut' }, end - 0.2)
+  tl.to(state, { explode: 0, scale: () => (wide() ? 1.05 : 0.95), x: () => (wide() ? innerWidth * 0.1 : 0), y: () => { const b = box(); return (wide() ? innerHeight * 0.52 : innerHeight * 0.33) - (b.top + b.height / 2); }, yaw: 0, duration: 1, ease: 'power2.inOut' }, end - 0.2)
     .to(state, { shadow: 1, duration: 0.5 }, end)
     .to(stage, { backgroundColor: '#ea6323', duration: 0.6 }, end)
     .fromTo(q('.stage__outro'), { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 0.5 }, end + 0.4)
