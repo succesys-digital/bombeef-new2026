@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import StorePhoto from '../../components/StorePhoto.astro';
+import stores from '../../data/stores.json';
+
+export function getStaticPaths() {
+  return stores.filter((s) => s.hasPage).map((s) => ({ params: { slug: s.slug }, props: { s } }));
+}
+const { s } = Astro.props;
+const maps = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`Bom Beef Burgers ${s.address}`)}`;
+const ld = { '@context': 'https://schema.org', '@type': 'Restaurant', name: `Bom Beef Burgers ${s.name}`, address: s.address, telephone: s.phone || undefined, servesCuisine: 'Hambúrguer' };
+---
+<Base title={`${s.name} | Bom Beef Burgers`} description={`Bom Beef Burgers ${s.name}: ${s.address}. ${s.hours}`} jsonLd={ld}>
+  <div class="wrap section store-page">
+    <div>
+      <p class="cond" style="font-size:1.15rem"><a href="/unidades/">Todas as unidades</a></p>
+      <h1 class="display" style="margin-block:.5rem 1.5rem;font-size:clamp(2.2rem,6vw,5.5rem)">{s.name}</h1>
+      <dl style="display:grid;gap:1rem">
+        {s.address && <div><dt class="cond muted">Endereço</dt><dd><address style="font-style:normal">{s.address}</address></dd></div>}
+        {s.phone && <div><dt class="cond muted">Telefone</dt><dd><a href={`tel:+55${s.phone.replace(/\D/g, '')}`}>{s.phone}</a></dd></div>}
+        {s.hours && <div><dt class="cond muted">Horário</dt><dd>{s.hours}</dd></div>}
+      </dl>
+      <div class="actions" style="margin-top:2rem">
+        {s.whatsapp ? <a class="btn" href={s.whatsapp} rel="noopener">Chamar no WhatsApp</a> : s.order && <a class="btn" href={s.order} rel="noopener">Fazer pedido</a>}
+        <a class="btn btn--plain" href={maps} rel="noopener">Como chegar</a>
+        <a class="btn btn--plain" href={s.instagram} rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <StorePhoto file={s.photo} name={s.name} eager sizes="(min-width: 900px) 50vw, 100vw" />
+  </div>
+</Base>

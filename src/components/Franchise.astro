@@ -1,0 +1,147 @@
+---
+import { Image, Picture } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import LeadForm from './LeadForm.astro';
+import VideoFacade from './VideoFacade.astro';
+import { stats, reasons, formats, margin, steps, testimonials, faq } from '../data/franchise';
+import netao from '../assets/photos/netao-burgers.png';
+import shopping from '../assets/photos/formato-shopping.jpg';
+import express from '../assets/photos/formato-express.jpg';
+import expressPlus from '../assets/photos/formato-express_plus.jpg';
+import shoppingPlus from '../assets/photos/formato-shopping_plus.jpg';
+import type { ImageMetadata } from 'astro';
+
+interface Props { partner?: { logo: ImageMetadata; name: string; note: string } }
+const { partner } = Astro.props;
+const photos: Record<string, ImageMetadata> = { shopping, express, express_plus: expressPlus, shopping_plus: shoppingPlus };
+const rows: [string, 'area' | 'staff' | 'invest' | 'revenue'][] = [['Investimento a partir de', 'invest'], ['Faturamento médio', 'revenue'], ['Área', 'area'], ['Funcionários', 'staff']];
+const canonical = new URL('/quero-ser-franqueado/', Astro.site).href;
+const faqLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) };
+---
+<Base
+  title="Quero ser franqueado | Bom Beef Burgers"
+  description="Franquia da hamburgueria do Netão: quatro formatos a partir de R$ 695 mil, treinamento, suporte de campo e mais de 40 unidades abertas ou em implementação."
+  canonical={canonical}
+  jsonLd={faqLd}
+>
+  <section class="on-paper" style="overflow: clip">
+    <div class="wrap section fr-hero">
+      <div>
+        {partner && <p class="cond" style="display:flex;gap:.75rem;align-items:center;margin-bottom:1.5rem"><Image src={partner.logo} alt={partner.name} height={48} style="width:auto;height:3rem;background:#000;padding:.35rem .6rem" /> {partner.note}</p>}
+        <h1 class="display">A próxima Bom Beef pode ser sua</h1>
+        <p class="lede" style="margin-block:1.5rem">Abra a hamburgueria do Netão na sua cidade, com um modelo testado, marca conhecida e time de expansão do cadastro à inauguração.</p>
+        <div class="actions">
+          <a class="btn btn--ink" href="#cadastro">Falar com um especialista</a>
+          <a class="btn btn--plain" href="#formatos">Ver formatos e investimento</a>
+        </div>
+      </div>
+      <div class="fr-hero__photo">
+        <Picture src={netao} formats={['avif', 'webp']} widths={[480, 800, 1208]} sizes="(min-width: 900px) 40vw, 100vw" alt="Netão segurando um hambúrguer em cada mão e gritando de empolgação" loading="eager" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <section class="on-orange">
+    <div class="wrap section">
+      <h2 class="title">Uma marca em movimento</h2>
+      <ul class="stats">
+        {stats.map((s) => <li><b>{s.value}</b><span class="label">{s.label}</span><span class="note" style="color:#000">{s.note}</span></li>)}
+      </ul>
+      <p class="lede">Do Açougue Bom Beef para a hamburgueria: a marca nasceu na pandemia, quando o Netão decidiu produzir o próprio hambúrguer. O canal soma 1,45 milhão de inscritos no YouTube.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <VideoFacade id="BbDjnElFGwc" title="Veja como funciona uma operação Bom Beef por dentro" />
+      </div>
+      <div>
+        <h2 class="title">Conheça a operação em 90 segundos</h2>
+        <p class="lede" style="margin-top:1rem">A cozinha, o preparo, o atendimento e o padrão de uma loja Bom Beef, por dentro.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="on-paper" data-tear>
+    <div class="wrap section">
+      <h2 class="title">Você não começa do zero</h2>
+      <p class="lede" style="margin-top:1rem">Pão, queijo, molho e carne de produção própria. Sistema integrado do estoque à venda. E um time ao seu lado.</p>
+      <ul class="reasons">
+        {reasons.map((r) => <li><h3>{r.title}</h3><p>{r.text}</p></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="on-paper" id="formatos" style="border-top:2px solid #000">
+    <div class="wrap section">
+      <h2 class="title">Quatro formatos de franquia</h2>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Comparativo dos formatos de franquia">
+        <table class="specs">
+          <caption class="sr">Investimento, faturamento, área e equipe por formato</caption>
+          <thead>
+            <tr>
+              <td></td>
+              {formats.map((f) => (
+                <th scope="col">
+                  <Image src={photos[f.id]} alt={`Fachada de exemplo do formato ${f.name}`} width={160} height={160} loading="lazy" />
+                  <b>{f.name}</b><span>{f.ideal}</span>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(([label, key]) => (
+              <tr>
+                <th scope="row">{label}</th>
+                {formats.map((f) => <td class={key === 'invest' ? 'money' : ''}>{f[key]}{key === 'invest' && f.extra ? '*' : ''}</td>)}
+              </tr>
+            ))}
+            <tr><th scope="row">Margem líquida estimada</th><td colspan="4">{margin.margin}, em todos os formatos</td></tr>
+            <tr><th scope="row">Payback estimado</th><td colspan="4">{margin.payback}, em todos os formatos</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fine">* Reforma não inclusa. Taxa de franquia de R$ 120 mil já contemplada no investimento; royalties de 9% ao mês e FNP de 2% ao mês. Valores e estimativas publicados pela franqueadora, sem garantia de resultado: variam por praça e operação. Peça a Circular de Oferta de Franquia ao time de expansão antes de decidir.</p>
+      <p style="margin-top:1.5rem"><a class="btn btn--ink" href="#cadastro">Quero receber a apresentação</a></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="title">Da primeira conversa à inauguração</h2>
+      <ol class="path">
+        {steps.map((s) => <li><h3>{s.title}</h3><p class="muted">{s.text}</p></li>)}
+      </ol>
+      <p class="muted" style="margin-top:1.5rem">Prazo estimado de implantação: 3 a 4 meses, conforme modelo, ponto, obras e licenças.</p>
+    </div>
+  </section>
+
+  <section class="on-orange">
+    <div class="wrap section">
+      <h2 class="title">Quem já vive o negócio</h2>
+      <div class="quotes">
+        {testimonials.map((t) => <blockquote class="quote" style="margin:0"><p>“{t.quote}”</p><footer>{t.name}, {t.role.toLowerCase()}</footer></blockquote>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="on-paper">
+    <div class="wrap section">
+      <h2 class="title">Perguntas frequentes</h2>
+      <div class="faq">
+        {faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="on-orange" id="cadastro">
+    <div class="wrap section form-wrap">
+      <div>
+        <h2 class="title">Descubra se existe uma oportunidade para você</h2>
+        <p class="lede" style="margin-top:1rem">Preencha o formulário. O time de expansão avalia seu perfil e retorna com o modelo e as oportunidades da sua região.</p>
+      </div>
+      <LeadForm />
+    </div>
+  </section>
+</Base>

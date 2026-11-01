@@ -1,0 +1,72 @@
+---
+import { Picture } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import VideoFacade from '../components/VideoFacade.astro';
+import videos from '../data/videos.json';
+import { company } from '../data/franchise';
+import faca from '../assets/photos/netao-faca.webp';
+import f1 from '../assets/photos/food-9.jpg';
+import f2 from '../assets/photos/food-8.jpg';
+import f3 from '../assets/photos/food-10.jpg';
+const featured = videos.find((v) => /Espátula/.test(v.title)) ?? videos.find((v) => !v.short)!;
+---
+<Base title="O Netão | Bom Beef Burgers" description="Do Açougue Bom Beef à hamburgueria: conheça o Netão, a história da marca e o jeito Bom Beef de fazer burger.">
+  <section class="on-orange netao">
+    <div class="wrap section netao__in">
+      <div>
+        <h1 class="display">Big Neto, Netão, o cara do açougue</h1>
+        <p class="lede" style="margin-top:1.5rem">Churrasco, cortes de qualidade, receita e muita dica de burger: é disso que o canal Netão Bom Beef fala para mais de 1,45 milhão de inscritos.</p>
+        <div class="actions" style="margin-top:1.5rem">
+          <a class="btn btn--ink" href="/videos/">Assistir aos vídeos</a>
+          <a class="btn btn--plain" href={company.instagramNetao} rel="noopener">Seguir no Instagram</a>
+        </div>
+      </div>
+      <div class="netao__photo" style="max-width:30rem">
+        <Picture src={faca} formats={['avif', 'webp']} widths={[400, 644]} sizes="(min-width: 900px) 40vw, 90vw" alt="Netão de camisa xadrez e avental de couro, afiando uma faca" loading="eager" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="title">Do balcão para o pão</h2>
+      <div class="timeline">
+        <div>
+          <h3>O açougue</h3>
+          <p>Quando o Netão abriu o primeiro açougue, o Açougue Bom Beef, foi de cara um grande sucesso.</p>
+        </div>
+        <div>
+          <h3>A pandemia</h3>
+          <p>Durante a pandemia, surgiu a oportunidade de produzir o próprio hambúrguer. Nascia a Bom Beef Burgers, que repetiu o sucesso do açougue.</p>
+        </div>
+        <div>
+          <h3>O cardápio</h3>
+          <p>Mais de 60 itens criados pelo próprio Netão e testados antes de o modelo virar franquia.</p>
+        </div>
+        <div>
+          <h3>A rede</h3>
+          <p>Hoje são mais de 40 unidades abertas ou em implementação. “Não somos só mais uma hamburgueria: somos uma comunidade apaixonada por carne de qualidade.”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Fotos dos burgers">
+    <div class="gallery">
+      <Picture src={f1} formats={['avif', 'webp']} widths={[400, 700]} sizes="(min-width: 800px) 33vw, 100vw" alt="Burger com salada num prato de madeira, com fogo ao fundo" loading="lazy" />
+      <Picture src={f2} formats={['avif', 'webp']} widths={[400, 700]} sizes="(min-width: 800px) 33vw, 100vw" alt="Bandeja laranja com burgers, batatas e molhos vista de cima" loading="lazy" />
+      <Picture src={f3} formats={['avif', 'webp']} widths={[400, 700]} sizes="(min-width: 800px) 33vw, 100vw" alt="Burger com bacon e queijo sobre tábua de madeira" loading="lazy" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split" style="align-items:start">
+      <VideoFacade id={featured.id} title={featured.title} />
+      <div>
+        <h2 class="title">Espátula de ouro</h2>
+        <p class="lede" style="margin-top:1rem">A premiação do Hambúrguer Perfeito, contada no canal do Netão.</p>
+        <p style="margin-top:1.5rem"><a class="btn" href="/quero-ser-franqueado/">Quero ser franqueado</a></p>
+      </div>
+    </div>
+  </section>
+</Base>

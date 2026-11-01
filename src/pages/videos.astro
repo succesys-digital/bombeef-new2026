@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import VideoFacade from '../components/VideoFacade.astro';
+import videos from '../data/videos.json';
+import { company } from '../data/franchise';
+const long = videos.filter((v) => !v.short);
+const shorts = videos.filter((v) => v.short);
+const [featured, ...rest] = long;
+---
+<Base title="Vídeos do Netão | Bom Beef Burgers" description="Churrasco, burgers e bastidores: os vídeos mais recentes do canal Netão Bom Beef no YouTube.">
+  <div class="wrap page-head">
+    <h1 class="display">Canal do Netão</h1>
+    <p class="lede muted">Cortes, receitas, dicas de burger e churrasco para 1,45 milhão de inscritos.</p>
+    <p style="margin-top:1.5rem"><a class="btn" href={company.youtube} rel="noopener">Abrir o canal no YouTube</a></p>
+  </div>
+  <div class="wrap" style="padding-bottom:clamp(4rem,10vw,8rem)">
+    <section aria-labelledby="h-destaque">
+      <h2 class="sub sr" id="h-destaque">Vídeo em destaque</h2>
+      <VideoFacade id={featured.id} title={featured.title} eager />
+    </section>
+    <section aria-labelledby="h-longos" style="margin-top:clamp(3rem,7vw,5rem)">
+      <h2 class="title" id="h-longos">Episódios</h2>
+      <div class="video-grid">{rest.map((v) => <VideoFacade id={v.id} title={v.title} />)}</div>
+    </section>
+    <section aria-labelledby="h-shorts" style="margin-top:clamp(3rem,7vw,5rem)">
+      <h2 class="title" id="h-shorts">Curtos</h2>
+      <div class="shorts-grid">{shorts.map((v) => <VideoFacade id={v.id} title={v.title} short />)}</div>
+    </section>
+  </div>
+</Base>
