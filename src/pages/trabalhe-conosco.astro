@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import { company } from '../data/franchise';
+---
+<Base title="Trabalhe conosco | Bom Beef Burgers" description="Quer trabalhar na Bom Beef Burgers? Envie seu currículo.">
+  <div class="wrap page-head" style="min-height:60svh">
+    <h1 class="display">Trabalhe conosco</h1>
+    <p class="lede" style="margin-block:1.5rem">Envie seu currículo informando sua cidade e a unidade de interesse.</p>
+    <div class="actions">
+      <a class="btn" href={`mailto:${company.email}?subject=Curr%C3%ADculo`}>Enviar currículo por email</a>
+      <a class="btn btn--plain" href="/unidades/">Ver as unidades</a>
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+import StorePhoto from '../../components/StorePhoto.astro';
+import stores from '../../data/stores.json';
+const ufs = [...new Set(stores.map((s) => s.uf).filter(Boolean))].sort();
+const maps = (a: string) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`Bom Beef Burgers ${a}`)}`;
+const openCount = stores.filter((s) => !s.soon).length;
+---
+<Base title="Unidades | Bom Beef Burgers" description="Encontre a Bom Beef Burgers mais próxima: endereços, telefones, horários e WhatsApp de todas as unidades.">
+  <div class="wrap page-head">
+    <h1 class="display">Onde tem Bom Beef</h1>
+    <p class="lede muted">{openCount} unidades com endereço publicado em {ufs.length} estados, e mais chegando.</p>
+  </div>
+  <div class="wrap" style="padding-bottom:clamp(4rem,10vw,8rem)">
+    <form class="filter" data-store-filter role="search" aria-label="Filtrar unidades">
+      <div class="field"><label for="f-q">Cidade, bairro ou shopping</label><input id="f-q" name="q" type="search" autocomplete="off" /></div>
+      <div class="field" style="flex:0 1 9rem"><label for="f-uf">Estado</label>
+        <select id="f-uf" name="uf"><option value="">Todos</option>{ufs.map((u) => <option>{u}</option>)}</select>
+      </div>
+      <button type="reset">Limpar</button>
+      <p class="cond" role="status" data-store-count style="margin-left:auto;font-size:1.15rem;align-self:center">{stores.length} unidades</p>
+    </form>
+    <p data-store-empty hidden class="lede" style="margin-top:2rem">Nenhuma unidade com esse nome. Limpe o filtro ou <a href="/quero-ser-franqueado/">leve a Bom Beef para a sua cidade</a>.</p>
+    <ul class="store-list">
+      {stores.map((s) => (
+        <li class="store" data-store={`${s.name} ${s.address} ${s.uf}`} data-uf={s.uf}>
+          {s.hasPage ? (
+            <a class="store__link" href={`/unidades/${s.slug}/`}>
+              <StorePhoto file={s.photo} name={s.name} />
+              <h2>{s.name}</h2>
+            </a>
+          ) : (
+            <Fragment><StorePhoto file={s.photo} name={s.name} /><h2>{s.name}</h2></Fragment>
+          )}
+          {s.soon && <p class="tag-soon">Mais informações em breve</p>}
+          {s.address && <address>{s.address}</address>}
+          {s.hours && <p class="muted">{s.hours}</p>}
+          <div class="store__links">
+            {s.address && <a href={maps(s.address)} rel="noopener">Como chegar</a>}
+            {s.whatsapp && <a href={s.whatsapp} rel="noopener">WhatsApp</a>}
+            {!s.whatsapp && s.phone && <a href={`tel:+55${s.phone.replace(/\D/g, '')}`}>{s.phone}</a>}
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Base>

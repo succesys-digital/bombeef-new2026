@@ -1,0 +1,13 @@
+---
+interface Props { id: string; title: string; short?: boolean; eager?: boolean }
+const { id, title, short, eager } = Astro.props;
+---
+<figure>
+  <div class:list={['video', short && 'video--short']}>
+    <button type="button" data-yt={id} data-title={title} aria-label={`Assistir: ${title}`}>
+      <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" width="480" height="360" loading={eager ? 'eager' : 'lazy'} decoding="async" />
+      <span class="video__play" aria-hidden="true"></span>
+    </button>
+  </div>
+  <figcaption class="video-title">{title}</figcaption>
+</figure>

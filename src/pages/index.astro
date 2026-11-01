@@ -1,0 +1,194 @@
+---
+import { Image, Picture } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import VideoFacade from '../components/VideoFacade.astro';
+import stores from '../data/stores.json';
+import videos from '../data/videos.json';
+import menu from '../data/menu.json';
+import { stats, formats, testimonials, company } from '../data/franchise';
+import netao from '../assets/photos/netao-burgers.png';
+import photoBand from '../assets/photos/food-7.jpg';
+import type { ImageMetadata } from 'astro';
+
+const cut = import.meta.glob<{ default: ImageMetadata }>('../assets/menu/*.png', { eager: true });
+const img = (code: string) => cut[`../assets/menu/${code}.png`].default;
+const item = (code: string) => menu.flatMap((s) => s.items).find((i) => i.code === code)!;
+
+// Real weights from the digital menu, one burger for each.
+const weights = [
+  { id: 'fininho', grams: '90 g', line: 'Fininho', code: '1003' },
+  { id: 'burgao', grams: '160 g', line: 'Burgão', code: '2003' },
+  { id: 'wagyu', grams: '200 g', line: 'Wagyu', code: '2037' },
+];
+const open = stores.filter((s) => s.hasPage && !s.soon);
+const longVideo = videos.find((v) => !v.short)!;
+const shorts = videos.filter((v) => v.short).slice(0, 1);
+const orgLd = {
+  '@context': 'https://schema.org', '@type': 'Restaurant', name: 'Bom Beef Burgers', url: 'https://bombeefburgers.com.br/',
+  servesCuisine: 'Hambúrguer', sameAs: [company.instagramBrand, company.instagramNetao, company.youtube, company.facebook],
+};
+---
+<Base
+  title="Bom Beef Burgers: menos gourmet, mais qualidade"
+  description="A hamburgueria do Netão. Burgers bons pra K7, preparados com carne de alta qualidade. Conheça o cardápio, as unidades e a franquia."
+  jsonLd={orgLd}
+  preloadBurger
+>
+  <section class="story" data-story aria-label="Abertura">
+    <div class="stage">
+      <div class="stage__type">
+        <h1 class="slogan">
+          <span class="slogan__minus"><span aria-hidden="true">− </span><span class="sr">Menos </span>Gourmet</span>
+          <span class="slogan__plus"><span aria-hidden="true">+ </span><span class="sr">Mais </span>Qualidade</span>
+        </h1>
+      </div>
+
+      <div class="stage__burger">
+        <img
+          data-burger-img
+          src="/burger/big-neto-800.webp"
+          srcset="/burger/big-neto-800.webp 800w, /burger/big-neto.webp 1200w"
+          sizes="(min-width: 900px) 66vw, 96vw"
+          width="800" height="575"
+          alt="Big Neto: dois burgers com queijo derretido, picles, cebola roxa e alface num pão de gergelim"
+          fetchpriority="high" decoding="sync"
+        />
+        <canvas
+          data-burger-gl
+          data-src="/burger/big-neto.webp"
+          data-depth="/burger/big-neto-depth.webp"
+          tabindex="0"
+          role="img"
+          aria-label="Big Neto em exibição. Use as setas esquerda e direita para girar."
+        ></canvas>
+      </div>
+
+      <div class="stage__intro">
+        <p class="lede">A hamburgueria do Netão. Nasceu dentro de um açougue e faz burgers bons pra K7.</p>
+        <div class="actions">
+          <a class="btn" href="/quero-ser-franqueado/">Quero ser franqueado</a>
+          <a class="btn btn--plain" href="/unidades/">Encontrar uma unidade</a>
+        </div>
+        <p class="hint" aria-hidden="true">Arraste o burger para girar. Role para abrir.</p>
+      </div>
+
+      <ol class="steps">
+        <li class="step" data-step>
+          <h2 class="title">Pão</h2>
+          <p class="lede">De gergelim, artesanal e bem fofinho. A rede produz o próprio pão.</p>
+        </li>
+        <li class="step" data-step>
+          <h2 class="title">Queijo</h2>
+          <p class="lede">American cheese queijudo, derretendo em cima da carne.</p>
+        </li>
+        <li class="step" data-step>
+          <h2 class="title">Carne</h2>
+          <p class="lede">Dois burgers fininhos de 90 g. Quem começou isso foi um açougue, e dá para sentir.</p>
+        </li>
+        <li class="step" data-step>
+          <h2 class="title">Molho e salada</h2>
+          <p class="lede">Molho especial do Netão, picles de pepino, cebola roxa e alface americana fresquinha.</p>
+        </li>
+      </ol>
+
+      <div class="stage__outro">
+        <h2 class="display" style="font-size:clamp(2.6rem,7vw,7rem)">Este é o Big Neto</h2>
+        <p class="lede">Um dos mais de 60 itens do cardápio, todos criados pelo próprio Netão.</p>
+        <div class="actions"><a class="btn btn--ink" href="/cardapio/">Ver o cardápio</a></div>
+        <p class="note">Imagem meramente ilustrativa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="on-orange netao" aria-labelledby="h-netao">
+    <div class="wrap section netao__in">
+      <div>
+        <h2 class="display" id="h-netao">Antes do burger, teve açougue</h2>
+        <p class="lede" style="margin-top:1.5rem">O Açougue Bom Beef foi sucesso de cara. Na pandemia, surgiu a chance de produzir o próprio hambúrguer, e a Bom Beef Burgers repetiu o sucesso.</p>
+        <p class="channel"><b>1,45 mi</b> <span class="cond" style="font-size:1.35rem">de inscritos no canal do Netão</span></p>
+        <div class="actions">
+          <a class="btn btn--ink" href="/netao/">Conhecer o Netão</a>
+          <a class="btn btn--plain" href="/videos/">Assistir aos vídeos</a>
+        </div>
+      </div>
+      <div class="netao__photo">
+        <Picture src={netao} formats={['avif', 'webp']} widths={[480, 800, 1208]} sizes="(min-width: 900px) 50vw, 100vw" alt="Netão de boné segurando um hambúrguer em cada mão, com cara de empolgação" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="h-peso">
+    <div class="wrap">
+      <h2 class="title" id="h-peso">Aqui, burger se escolhe pelo peso</h2>
+      <div class="weights" data-tabs>
+        <div>
+          <div class="weights__list" role="tablist" aria-label="Linhas por gramatura" aria-orientation="vertical">
+            {weights.map((w, i) => (
+              <button class="weight" type="button" role="tab" id={`tab-${w.id}`} aria-controls={`panel-${w.id}`} aria-selected={i === 1 ? 'true' : 'false'} tabindex={i === 1 ? 0 : -1}>
+                <b>{w.grams}</b><span>{w.line}</span>
+              </button>
+            ))}
+          </div>
+          <p style="margin-top:1.5rem"><a class="btn" href="/cardapio/">Ver o cardápio completo</a></p>
+        </div>
+        {weights.map((w, i) => (
+          <div class="weights__panel" role="tabpanel" id={`panel-${w.id}`} aria-labelledby={`tab-${w.id}`} hidden={i !== 1}>
+            <Image src={img(w.code)} alt={item(w.code).title} widths={[400, 600, 800].filter((n) => n <= img(w.code).width)} sizes="(min-width: 900px) 40vw, 100vw" loading="lazy" />
+            <div>
+              <h3 class="sub">{item(w.code).title}</h3>
+              <p class="muted" style="margin-top:.4rem">{item(w.code).desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-label="Burger aberto ao meio, com a carne suculenta à mostra">
+    <Picture src={photoBand} formats={['avif', 'webp']} widths={[640, 1000]} sizes="100vw" alt="" loading="lazy" data-parallax />
+    <p class="band__text display">Carne de verdade</p>
+  </section>
+
+  <section class="on-paper" data-tear aria-labelledby="h-franquia">
+    <div class="wrap section">
+      <h2 class="display" id="h-franquia">Leve a Bom Beef para a sua cidade</h2>
+      <ul class="stats">
+        {stats.map((s) => <li><b>{s.value}</b><span class="label">{s.label}</span><span class="note">{s.note}</span></li>)}
+      </ul>
+      <div class="split">
+        <p class="lede">Quatro formatos de loja, com investimento a partir de {formats[0].invest}. Treinamento, sistema de gestão próprio e suporte de campo da abertura ao dia a dia.</p>
+        <div class="actions" style="justify-self:end"><a class="btn btn--ink" href="/quero-ser-franqueado/">Quero ser franqueado</a></div>
+      </div>
+      <blockquote class="quote" style="margin:clamp(2.5rem,6vw,5rem) 0 0;max-width:46rem;border-top:2px solid #000;padding-top:1.25rem">
+        <p>“{testimonials[0].quote}”</p>
+        <footer>{testimonials[0].name}, {testimonials[0].role.toLowerCase()}</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="h-unidades">
+    <div class="wrap">
+      <h2 class="title" id="h-unidades">Tem Bom Beef perto de você?</h2>
+      <p class="cities">
+        {open.map((s, i) => <Fragment><a href={`/unidades/${s.slug}/`}>{s.name}</a>{i < open.length - 1 && <span class="sep" aria-hidden="true">+</span>}{' '}</Fragment>)}
+      </p>
+      <p style="margin-top:2rem"><a class="btn" href="/unidades/">Ver endereços e horários</a></p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0" aria-labelledby="h-videos">
+    <div class="wrap">
+      <h2 class="title" id="h-videos">Direto do canal do Netão</h2>
+      <div class="home-videos">
+        <VideoFacade id={longVideo.id} title={longVideo.title} />
+        {shorts.map((v) => <VideoFacade id={v.id} title={v.title} short />)}
+      </div>
+      <div class="actions" style="margin-top:2rem">
+        <a class="btn" href="/videos/">Ver mais vídeos</a>
+        <a class="btn btn--plain" href={company.youtube} rel="noopener">Abrir o canal no YouTube</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>import '../scripts/home-story';</script>

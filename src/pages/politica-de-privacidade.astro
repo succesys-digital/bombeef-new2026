@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import blocks from '../data/privacy.json';
+---
+<Base title="Política de privacidade | Bom Beef Burgers" description="Como a Bom Beef Burgers trata dados pessoais e cookies.">
+  <div class="wrap section">
+    <h1 class="title" style="margin-bottom:2rem">Política de privacidade</h1>
+    <div class="prose">
+      {blocks.map((b) => (b.tag === 'h2' ? <h2>{b.text}</h2> : <p>{b.text}</p>))}
+    </div>
+  </div>
+</Base>
