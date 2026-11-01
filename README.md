@@ -38,7 +38,7 @@ node tests/site.mjs http://localhost:8788
 | `RD_CONVERSION_ID` | Runtime, opcional | Padrão: `form-p9-bb-burger` |
 | `PUBLIC_GTM_ID` | **Build** | ID do GTM. Sem ele, nenhuma tag nem banner de cookies |
 
-4. Branches ganham preview automático em `*.pages.dev`.
+4. Branches ganham preview automático em `*.pages.dev`. O build de produção só passa quando a `main` tem o site; antes do merge ele falha com `ENOENT package.json`.
 5. Antes de apontar o domínio, resolva `docs/pendencias.md`.
 
 ## Atualizar conteúdo
